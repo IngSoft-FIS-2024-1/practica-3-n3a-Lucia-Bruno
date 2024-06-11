@@ -31,7 +31,21 @@ describe('Library', () => {
     expect(() => myLibrary.setName(123)).toThrow();
   });
   it('throw an error when setting an empty name', () => {
-    // TODO
+    expect(() => myLibrary.setName('')).toThrow('El nombre es obligatorio');
   });
+  it('return the total Words in the Library', () => {
+    myLibrary.addBook('Cuentos de la Selva', 'Horacio Quiroga', 120);
+    let libro1 = myLibrary.getInventory()[0];
+    libro1.setWords(8965);
+    myLibrary.addBook('El Hombre que Calculaba', 'Malba Tahan', 286);
+    let libro2 = myLibrary.getInventory()[1];
+    libro2.setWords(125489);
+
+    expect(myLibrary.totalWords()).toBe(134454);
+  });
+
+
+
+  
 
 });

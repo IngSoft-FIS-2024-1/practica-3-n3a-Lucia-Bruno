@@ -12,12 +12,12 @@ class Library {
   }
 
   setName(name) {
-    if (typeof (name) !== "string") {
-      throw new Error()
+    if (typeof (name) !== 'string') {
+      throw new Error('El nombre es texto');
     }
     name = name.trim();
     if (name.length === 0) {
-      throw new Error()
+      throw new Error('El nombre es obligatorio');
     }
     this.#name = name;
   }
@@ -30,7 +30,7 @@ class Library {
     const newBook = new Book(title, author, pages);
     this.#inventory.push(newBook);
   }
-
+ 
   getInventory() {
     return this.#inventory;
   }
@@ -40,7 +40,12 @@ class Library {
   }
 
   totalWords() {
-    // TODO
+    this.#totalWords = 0;
+    for(const books of this.#inventory){
+      const countWords = books.getWords();
+      this.#totalWords = this.#totalWords + countWords;
+    }
+    return this.#totalWords;
   }
 }
 
