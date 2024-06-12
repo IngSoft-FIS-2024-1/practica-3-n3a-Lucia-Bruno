@@ -5,10 +5,11 @@ class Book {
   #pages;
   #words;
   
-  constructor(title, author, pages) {
+  constructor(title, author, pages, words) {
     this.setTitle(title);
     this.setAuthor(author);
     this.setPages(pages);
+    this.setWords(words);
   }
 
   getTitle() {

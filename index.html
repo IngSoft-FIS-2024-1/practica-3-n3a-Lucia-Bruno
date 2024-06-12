@@ -28,12 +28,16 @@
                     aria-selected="false">Inventario</button>
             </li>
         </ul>
-        <div class="tab-content container" id="pills-tabContent">
+        <div class="tab-content container mt-5 " id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-library" role="tabpanel"
                 aria-labelledby="pills-library-tab" tabindex="0">
                 <form action="">
-                    <label for="inp-total-books">Total de libros:
+                    <label for="inp-total-books" class="d-block mb-1">Total de libros:
                         <input id="inp-total-books" name="inp-total-books" type="text" readonly>
+                    </label>
+                    <br>
+                    <label for="inp-total-words" class="d-block mb-1">Palabras totales:
+                        <input id="inp-total-words" name="inp-words" value="0" type="text" readonly>
                     </label>
                 </form>
             </div>
@@ -53,6 +57,11 @@
                     <div class="form-row mb-3">
                         <label for="inp-pages">Páginas:
                             <input id="inp-pages" name="inp-pages" type="number" min="1" required>
+                        </label>
+                    </div>
+                    <div class="form-row mb-3">
+                        <label for="inp-pages">Palabras:
+                            <input id="inp-words" name="inp-words" type="number">
                         </label>
                     </div>
                     <div class="d-none mb-3" id="add-book-error">
